@@ -41,7 +41,7 @@ function load() {
     if(data.armyName === undefined)
         nameArmy()
     if(data.currentUpdate !== "v0.0.4") {
-        createAlert("Welcome Back!","The current version is v0.0.4, View the Changelog for details","812626")
+        createAlert('Welcome Back!',"The current version is v0.0.4, View the Changelog for details","#812626")
         data.currentUpdate = "v0.0.4"
     }
     updateAutomators()

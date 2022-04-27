@@ -21,6 +21,7 @@ const toggleNames = ['Newsticker']
 function toggle(i) {
     data.settingsToggles[i] = !data.settingsToggles[i]
     DOMCacheGetOrSet(`setTog${i}`).innerHTML = data.settingsToggles[i] ? `${toggleNames[i]}: On` : `${toggleNames[i]}: Off`
+    if(i === 0) scrollNextMessage()
 }
 
 function changeTab(a) {
@@ -41,7 +42,7 @@ function mainLoop() {
 }
 
 function createAlert(a,b,c) {
-    document.getElementById('modalContainer').style.border = `4px solid #${c}`
+    document.getElementById('modalContainer').style.border = `4px solid ${c}`
     document.getElementById('alertTitle').innerHTML = a
     document.getElementById('alertContent').innerHTML = b
     document.getElementById('alert').style.display = 'block'
