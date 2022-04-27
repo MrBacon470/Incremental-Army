@@ -20,11 +20,11 @@ function updateHTML() {
         for(let i = 0; i < 4; i++) {
             DOMCacheGetOrSet(`${rankNameIds[i]}Amt`).innerHTML = `${rankNameLong[i]}: ${format(data.enlisted[i])}`
             DOMCacheGetOrSet(`${rankNameIds[i]}Button`).innerHTML = `Enlist ${format(D(1))} ${rankNameShort[i]} | Cost: ${format(enlistCost[i])} Infantry Equipment`
-            DOMCacheGetOrSet(`${rankNameIds[i]}Button`).className = data.equipment[0].gte(enlistCost[i]) ? 'unlocked' : 'locked'
+            DOMCacheGetOrSet(`${rankNameIds[i]}Button`).className = data.equipment[0].gte(enlistCost[i]) ? 'btn btn-success' : 'btn btn-danger'
             
             DOMCacheGetOrSet(`${rankNameIds[i+4]}Amt`).innerHTML = `${rankNameLong[i+4]}: ${format(data.officers[i])} | ${format(officerBoost[i])}x to ${rankNameShort[i]} Attack`
             DOMCacheGetOrSet(`${rankNameIds[i+4]}Button`).innerHTML = officerCost[i].gt(1) ? `Hire ${format(D(1))} ${rankNameShort[i+4]} | Cost: ${format(officerCost[i])} Medals` : `Hire ${format(D(1))} ${rankNameShort[i+4]} | Cost: ${format(officerCost[i])} Medal`
-            DOMCacheGetOrSet(`${rankNameIds[i+4]}Button`).className = data.medals.gte(officerCost[i]) ? 'unlocked' : 'locked'
+            DOMCacheGetOrSet(`${rankNameIds[i+4]}Button`).className = data.medals.gte(officerCost[i]) ? 'btn btn-success' : 'btn btn-danger'
         }
     }
     else if(data.currentTab === 1) {
@@ -32,7 +32,7 @@ function updateHTML() {
         for(let i = 0; i < 4; i++) {
             DOMCacheGetOrSet(`${equipIds[i]}Amt`).innerHTML = data.equipment[i].gt(1) && i !== 0 ? `${equipNames[i]}s: ${format(data.equipment[i])}` : `${equipNames[i]}: ${format(data.equipment[i])}`
             DOMCacheGetOrSet(`${equipIds[i]}Button`).innerHTML = `Fabricate ${format(D(1))} ${equipNames[i]} | Cost: $${format(equipmentCost[i])}`
-            DOMCacheGetOrSet(`${equipIds[i]}Button`).className = data.funds.gte(equipmentCost[i]) ? 'unlocked' : 'locked'
+            DOMCacheGetOrSet(`${equipIds[i]}Button`).className = data.funds.gte(equipmentCost[i]) ? 'btn btn-success' : 'btn btn-danger'
         }
         DOMCacheGetOrSet('equipFundsText').innerHTML = `Equipment<br><br>Funds: $${format(data.funds)}<hr>`
     }
@@ -43,9 +43,9 @@ function updateHTML() {
         DOMCacheGetOrSet('acquireButton').innerHTML = data.approval.gt(0) ? `Acquire Funding (+$${format(fundsToRecieve)} | -${format(D(1))} Approval)` : `You need congressional approval to acquire funding`
         
         DOMCacheGetOrSet('lobbyButton').innerHTML = data.approval.eq(100) ? `Lobby Congress<br>[Funding Base x2 | -90.00 Approval]`: `Lobby Congress<br>[Locked - Req: 100.00/100.00 Approval]`
-        DOMCacheGetOrSet('lobbyButton').className = data.approval.eq(100) ? 'unlocked' : 'locked'
+        DOMCacheGetOrSet('lobbyButton').className = data.approval.eq(100) ? 'btn btn-success' : 'btn btn-danger'
         DOMCacheGetOrSet('propButton').innerHTML = data.approval.eq(0) ? `Release Propaganda<br>[Approval set to 50.00 | -$${format(data.funds.times(.75))}]` : `Release Propaganda<br>[Locked - Req: 0.00/100.00 Approval]`
-        DOMCacheGetOrSet('propButton').className = data.approval.eq(0) ? 'unlocked' : 'locked'
+        DOMCacheGetOrSet('propButton').className = data.approval.eq(0) ? 'btn btn-success' : 'btn btn-danger'
         if(!data.promotionUpgrades[1] && !data.promotionUpgrades[6])
             DOMCacheGetOrSet('propButton').innerHTML = data.approval.eq(0) ? `Release Propaganda<br>[Approval set to 50.00 | -$${format(data.funds.times(.75))}]` : `Release Propaganda<br>[Locked - Req: 0.00/100.00 Approval]`
         else if(data.promotionUpgrades[1] && !data.promotionUpgrades[6])
