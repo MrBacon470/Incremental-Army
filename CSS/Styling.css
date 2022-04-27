@@ -13,21 +13,10 @@
 }
 /*Globals*/
 
-@keyframes settings {
-    0%{color: #ff0000; border-color: #ff0000;}
-    17% {color: #ffff00; border-color: #ffff00;}
-    33%{color: #00ff00; border-color: #00ff00;}
-    50%{color: #00ffff; border-color: #00ffff;}
-    67%{color: #0000ff; border-color: #0000ff;}
-    83%{color: #ff00ff; border-color: #ff00ff;}
-    100%{color: #ff0000; border-color: #ff0000;}
-}
-
 * {
-    background-color: #202020;
     font-family: 'Roboto Mono';
+    background-color: #202020;
     color: whitesmoke;
-    font-size: 0.995em;
 }
 
 button {
@@ -48,11 +37,12 @@ hr {
     border: 1px solid whitesmoke;
 }
 
-/*Classes*/
-
-.mainArea {
-    margin-top: 1vh;
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
 }
+
+/*Classes*/
 
 .flexBox {
     display: flex;

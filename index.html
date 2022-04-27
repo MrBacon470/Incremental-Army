@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="Imgs/PVT.png">
     <title>Incremental Army</title>
 </head>
-<body>
+<body style="font-family:RM">
     <div id="modalContainer">
         <div id="alert">
             <h3 id="alertTitle">Welcome back gamer!</h3>
@@ -19,7 +19,7 @@
         </div>
     </div>
     
-    <div id="navBar" class="flexBox" style="flex-direction: row;">
+    <div id="navBar" class="d-flex flex-row justify-content-center">
         <button style="margin: 0.25vw;" id="mB" onclick="changeTab(0)">Manpower</button>
         <button style="margin: 0.25vw;" id="eB" onclick="changeTab(1)">Equipment</button>
         <button style="margin: 0.25vw;" id="fB" onclick="changeTab(2)">Finances</button>
@@ -32,52 +32,52 @@
             
         </div>
     </div>
-    <div id="manpowerArea" class="flexBox mainArea">
+    <div id="manpowerArea" class="flex-column justify-content-center" style="margin-top:1vh">
         <h3 id="enlistedDisplay" style="text-align:center">Enlisted<br>Infantry Equipment: 0.00<hr></h3>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--manpower-color);" src="Imgs/PVT.png">
             <div id="pvtAmt" style="color:var(--manpower-color);margin-left: .5vw;">Private: 0.00</div>
             <button id="pvtButton" style="margin-left: .5vw;" onclick="buyMP(0,0)">Enlist 1 PVT | Cost: 1.00 Infantry Equipment</button>
             <button id="auto0" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--manpower-color);" src="Imgs/CPL.png">
             <div id="cplAmt" style="color:var(--manpower-color);margin-left: .5vw;">Corporal: 0.00</div>
             <button id="cplButton" style="margin-left: .5vw;" onclick="buyMP(1,0)">Enlist 1 CPL | Cost: 2.00 Infantry Equipment</button>
             <button id="auto1" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--manpower-color);" src="Imgs/SGT.png">
             <div id="sgtAmt" style="color:var(--manpower-color);margin-left: .5vw;">Sergeant: 0.00</div>
             <button id="sgtButton" style="margin-left: .5vw;" onclick="buyMP(2,0)">Enlist 1 SGT | Cost: 3.00 Infantry Equipment</button>
             <button id="auto2" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--manpower-color);" src="Imgs/SSGT.png">
             <div id="ssgtAmt" style="color:var(--manpower-color);margin-left: .5vw;">Staff Sergeant: 0.00</div>
             <button id="ssgtButton" style="margin-left: .5vw;" onclick="buyMP(3,0)">Enlist 1 SSGT | Cost: 4.00 Infantry Equipment</button>
             <button id="auto3" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
         <h3 id="officerDisplay" style="text-align:center">Officers<br>Medals: 0.00<hr></h3>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--manpower-color);" src="Imgs/LT2.png">
             <div id="2ltAmt" style="color:var(--manpower-color);margin-left: .5vw;">2nd Lieutenant: 0.00</div>
             <button id="2ltButton" style="margin-left: .5vw;" onclick="buyMP(0,1)">
             <button id="auto9" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--manpower-color);" src="Imgs/LT1.png">
             <div id="1ltAmt" style="color:var(--manpower-color);margin-left: .5vw;">1st Lieutenant: 0.00</div>
             <button id="1ltButton" style="margin-left: .5vw;" onclick="buyMP(1,1)"></button>
             <button id="auto10" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--manpower-color);" src="Imgs/CPT.png">
             <div id="cptAmt" style="color:var(--manpower-color);margin-left: .5vw;">Captain: 0.00</div>
             <button id="cptButton" style="margin-left: .5vw;" onclick="buyMP(2,1)"></button>
             <button id="auto11" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div> 
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--manpower-color);" src="Imgs/MAJ.png">
             <div id="majAmt" style="color:var(--manpower-color);margin-left: .5vw;">Major: 0.00</div>
             <button id="majButton" style="margin-left: .5vw;" onclick="buyMP(3,1)"></button>
@@ -85,44 +85,44 @@
         </div>
 
     </div>
-    <div id="equipmentArea" class="flexBox mainArea">
+    <div id="equipmentArea" class="flex-column justify-content-center">
         <h4 id="equipFundsText" style="text-align:center">Equipment<br><br>Funds to Spend:</h4>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--equipment-color);" src="Imgs/Ammo.png">
             <div id="ieAmt" style="color:var(--equipment-color);margin-left: .5vw;">Infantry Equipment: 0.00</div>
             <button id="ieButton" style="margin-left: .5vw;" onclick="buyEquip(0)">Fabricate 1.00 Infantry Equipment | Cost: $15,000.00</button>
             <button id="auto4" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--equipment-color);" src="Imgs/AT.png">
             <div id="atAmt" style="color:var(--equipment-color);margin-left: .5vw;">Anti-Tank Guns: 0.00</div>
             <button id="atButton" style="margin-left: .5vw;" onclick="buyEquip(1)">Fabricate 1.00 Anti-Tank Gun | Cost: $178,000.00</button>
             <button id="auto5" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--equipment-color);" src="Imgs/ART.png">
             <div id="artAmt" style="color:var(--equipment-color);margin-left: .5vw;">Artillery Guns: 0.00</div>
             <button id="artButton" style="margin-left: .5vw;" onclick="buyEquip(2)">Fabricate 1.00 Artillery Gun | Cost: $500,000.00</button>
             <button id="auto6" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
-        <div class="currencyHolder">
+        <div class="currencyHolder justify-content-center">
             <img style="border: 2px solid var(--equipment-color);" src="Imgs/TRANSPORT.png">
             <div id="transportAmt" style="color:var(--equipment-color);margin-left: .5vw;">Transports: 0.00</div>
             <button id="transportButton" style="margin-left: .5vw;" onclick="buyEquip(3)">Fabricate 1.00 Transport | Cost: $220,000.00</button>
             <button id="auto7" style="margin-left: .5vw;" class="off">Automator: OFF</button>
         </div>
     </div>
-    <div id="financesArea" class="flexBox mainArea">
-        <div id="fundsText">Funds: $0.00</div>
-        <div id="approvalText">Congressional Approval: 50.00/100.00</div>
-        <div style="flex-direction:row;margin-top:inherit;">
+    <div id="financesArea" class="flex-column justify-content-center">
+        <div id="fundsText" style="text-align:center">Funds: $0.00</div>
+        <div id="approvalText" style="text-align:center">Congressional Approval: 50.00/100.00</div>
+        <div class="flexBox">
             <button onclick="acquire()" id="acquireButton">Acquire Funding (+$1,000.00 | -1.00 Approval)</button>
         </div>
-        <div style="flex-direction:row;margin-top:inherit;">
+        <div class="flexBox flex-row" style="margin-top:inherit">
             <button onclick="specialItem(0)" id="lobbyButton">Lobby The Government<br>[Locked]</button>
             <button onclick="specialItem(1)" id="propButton">Release Propaganda<br>[Locked]</button>
         </div>
-        <div style="flex-direction: row;margin-top:inherit">
+        <div class="flexBox flex-row" style="margin-top:inherit">
             <button id="auto8" class="off">Automator: OFF</button>
             
         </div>
@@ -133,7 +133,7 @@
         </div>
         
     </div>
-    <div id="battlegroundArea" class="flexBox mainArea">
+    <div id="battlegroundArea" class="flex-column justify-content-center">
         <div id="battleAlertText">You need at least 1 Pvt to Fight</div>
         <div id="battlegroundStatsHolder" class="flexBox">
             <div id="mainStats" style="display:flex; flex-direction:row;">
@@ -154,7 +154,7 @@
             </div>
         </div>
     </div>
-    <div id="promotionsArea" class="flexBox mainArea">
+    <div id="promotionsArea" class="flex-column justify-content-center">
         <div id="progressBarHolder" class="currencyHolder">
             <img id="currentRankImg" src="Imgs/colonel.svg" style="height:32px;width:32px;">
             <div id="promotionProgressText" style="margin-left:1vw;margin-right:1vw;">Colonel ==Progress to promotion: 0.00% (0/1e3 Medals)=> Bridgadier General</div>
@@ -200,7 +200,7 @@
         </div>
         <button id="promotionButton" onclick="promote()">Promote</button>
     </div>
-    <div id="settingsArea" class="flexBox mainArea">
+    <div id="settingsArea" class="flex-column justify-content-center">
         <div>
             <button onclick="save()">Manual Save</button>
             <button onclick="exportSave()">Export Save</button>
